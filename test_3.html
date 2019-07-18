@@ -14,10 +14,17 @@
   <input type="text" id="js-state">
 <script>
 var index = 100;
-
+var initFlag = false;
 function testNext() {
+   if (initFlag) {
+    history.pushState({index: 1}, null, null);
+    history.pushState({index: 2}, null, null);
+    history.pushState({index: 3}, null, null);
+    initFlag = true;
+   }
    index++;
    $('#js-test').val(index);
+
    history.pushState({index: index}, null, null);
 }
 
@@ -32,9 +39,6 @@ window.onpopstate = function(event) {
 };
  
 // 
-history.pushState({index: 1}, null, null);
-history.pushState({index: 2}, null, null);
-history.pushState({index: 3}, null, null);
 
 </script>
 </body>
