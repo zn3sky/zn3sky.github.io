@@ -17,9 +17,7 @@ var index = 100;
 var initFlag = false;
 function testNext() {
    if (!initFlag) {
-    history.pushState({index: 1}, null, null);
-    history.pushState({index: 2}, null, null);
-    history.pushState({index: 3}, null, null);
+    
     initFlag = true;
    }
    index++;
@@ -38,8 +36,12 @@ window.onpopstate = function(event) {
    $('#js-state').val(JSON.stringify(event.state));
 };
  
-// 
-
+window.onload = function() {
+    history.pushState({index: 1}, null, null);
+    history.pushState({index: 2}, null, null);
+    history.pushState({index: 3}, null, null);
+};
+ 
 </script>
 </body>
 </html>
