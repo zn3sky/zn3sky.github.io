@@ -6,7 +6,7 @@
 
 </head>
 <body>
- 6
+ 7
  <br>
   <a href="javascript:testPrev()">前のステップへ</a><br>
 
@@ -28,14 +28,19 @@ function testNext() {
 
 function testPrev() {
    index--;
-   $('#js-index').val(index);
-   $('#js-state').val(JSON.stringify(history.state));
+   //$('#js-index').val(index);
+   //$('#js-state').val(JSON.stringify(history.state));
 }
 
-window.onpopstate = function(event) {
+ /*
+window.onpopstate = function(e) {
    //console.log(event.state);
-   $('#js-onpopstate').val(JSON.stringify(event.state));
+   $('#js-onpopstate').val(JSON.stringify(e.state));
 };
+*/
+window.addEventListener('popstate', function (e) {
+   $('#js-onpopstate').val(JSON.stringify(e.state));
+});
  /*
 window.onload = function() {
     history.pushState({index: 1}, null, null);
