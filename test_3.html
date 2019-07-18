@@ -18,7 +18,7 @@ var index = 100;
 function testNext() {
    index++;
    $('#js-test').val(index);
-   history.pushstate({index: index}, null, null);
+   history.pushState({index: index}, null, null);
 }
 
 function testPrev() {
@@ -32,9 +32,9 @@ window.onpopstate = function(event) {
 };
  
 // 
-history.pushstate({index: 1}, null, null);
-history.pushstate({index: 2}, null, null);
-history.pushstate({index: 3}, null, null);
+history.pushState({index: 1}, null, null);
+history.pushState({index: 2}, null, null);
+history.pushState({index: 3}, null, null);
 
 </script>
 </body>
