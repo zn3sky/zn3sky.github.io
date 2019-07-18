@@ -6,13 +6,20 @@
 
 </head>
 <body>
-  ページ3<a href="javascript:test()">次のステップへ</a>
+  <a href="javascript:testPrev()">前のステップへ</a>
+
+  ページ3<br>
+ <a href="javascript:testNext()">次のステップへ</a>
   <input type="text" id="js-test">
 <script>
 var index = 1;
-function test() {
+function testNext() {
    index++;
-   $('js-test').value = index;
+   $('js-test').val(index);
+}
+ function testPrev() {
+   index++;
+   $('js-test').val(index);
 }
 </script>
 </body>
