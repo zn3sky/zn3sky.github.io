@@ -16,7 +16,7 @@
 var index = 100;
 var initFlag = false;
 function testNext() {
-   if (initFlag) {
+   if (!initFlag) {
     history.pushState({index: 1}, null, null);
     history.pushState({index: 2}, null, null);
     history.pushState({index: 3}, null, null);
