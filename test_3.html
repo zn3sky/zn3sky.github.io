@@ -16,11 +16,15 @@ var index = 1;
 function testNext() {
    index++;
    $('js-test').val(index);
+   history.pushstate({index: index} null null);
 }
- function testPrev() {
-   index++;
+function testPrev() {
+   index--;
    $('js-test').val(index);
 }
+window.onpopstate = function(event) {
+ console.log(event.state);
+};
 </script>
 </body>
 </html>
