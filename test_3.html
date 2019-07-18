@@ -16,7 +16,7 @@ var index = 1;
 function testNext() {
    index++;
    $('#js-test').val(index);
-   history.pushstate({index: index} null null);
+   history.pushstate({index: index}, null, null);
 }
 function testPrev() {
    index--;
