@@ -28,7 +28,7 @@ function testPrev() {
 
 window.onpopstate = function(event) {
    console.log(event.state);
-   $('#js-state').val(event.state);
+   $('#js-state').val(JSON.stringify(event.state));
 };
  
 // 
