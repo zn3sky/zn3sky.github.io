@@ -11,20 +11,31 @@
   ページ3<br>
  <a href="javascript:testNext()">次のステップへ</a>
   <input type="text" id="js-test">
+  <input type="text" id="js-state">
 <script>
-var index = 1;
+var index = 100;
+
 function testNext() {
    index++;
    $('#js-test').val(index);
    history.pushstate({index: index}, null, null);
 }
+
 function testPrev() {
    index--;
    $('#js-test').val(index);
 }
+
 window.onpopstate = function(event) {
- console.log(event.state);
+   console.log(event.state);
+   $('#js-state').val(event.state);
 };
+ 
+// 
+history.pushstate({index: 1}, null, null);
+history.pushstate({index: 2}, null, null);
+history.pushstate({index: 3}, null, null);
+
 </script>
 </body>
 </html>
